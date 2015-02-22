@@ -6,6 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
+import javax.inject.Inject;
+
 import butterknife.InjectView;
 import fr.rizomm.contacts.BaseFragment;
 import fr.rizomm.contacts.R;
@@ -26,6 +30,9 @@ public class ContactDetailFragment extends BaseFragment {
     @InjectView(R.id.phone_textview_details)
     TextView phoneTextView;
 
+    @Inject
+    List<Contact> contacts;
+
     private Contact mContact;
 
     public ContactDetailFragment() {
@@ -36,8 +43,8 @@ public class ContactDetailFragment extends BaseFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (getActivity().getIntent() != null && getActivity().getIntent().getParcelableExtra(ARG_CONTACT) != null) {
-            mContact = getActivity().getIntent().getParcelableExtra(ARG_CONTACT);
+        if (getActivity().getIntent() != null) {
+            mContact = contacts.get(getActivity().getIntent().getIntExtra(ARG_CONTACT, 0));
         }
     }
 

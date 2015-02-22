@@ -52,7 +52,7 @@ public class ContactListFragment extends TitledFragment {
     @OnItemClick(R.id.listView)
     public void onContactListItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent nextScreen = new Intent(getActivity(), ContactDetailActivity.class);
-        nextScreen.putExtra(ContactDetailFragment.ARG_CONTACT, contacts.get(position));
+        nextScreen.putExtra(ContactDetailFragment.ARG_CONTACT, position);
         startActivity(nextScreen);
     }
 

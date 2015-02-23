@@ -27,9 +27,6 @@ import fr.rizomm.contacts.ui.activities.ContactDetailActivity;
 public class ContactListFragment extends TitledFragment {
 
     @Inject
-    List<Contact> contacts;
-
-    @Inject
     ContactListAdaptater adaptater;
 
     @InjectView(R.id.listView)

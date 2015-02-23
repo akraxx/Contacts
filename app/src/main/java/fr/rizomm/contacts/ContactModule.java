@@ -11,6 +11,7 @@ import dagger.Module;
 import dagger.Provides;
 import fr.rizomm.contacts.adaptaters.ContactFragmentPagerAdapter;
 import fr.rizomm.contacts.adaptaters.ContactViewHolder;
+import fr.rizomm.contacts.managers.ContactManager;
 import fr.rizomm.contacts.model.Contact;
 import fr.rizomm.contacts.ui.activities.ContactDetailActivity;
 import fr.rizomm.contacts.ui.activities.HomeActivity;
@@ -52,11 +53,7 @@ public class ContactModule {
 
     @Singleton
     @Provides
-    public List<Contact> providesContacts() {
-        List<Contact> contacts = new ArrayList<>();
-        contacts.add(Contact.builder().firstName("MARIE").lastName("Maximilien").mail("contact@mmarie.fr").phone("0605040708").build());
-        contacts.add(Contact.builder().firstName("DOE").lastName("John").mail("jd@test.fr").phone("0505050505").build());
-        contacts.add(Contact.builder().firstName("San").lastName("Goku").mail("sg@test.fr").phone("0404040404").build());
-        return contacts;
+    public ContactManager providesContactManager() {
+        return new ContactManager();
     }
 }

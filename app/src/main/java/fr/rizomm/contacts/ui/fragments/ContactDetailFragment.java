@@ -13,6 +13,7 @@ import javax.inject.Inject;
 import butterknife.InjectView;
 import fr.rizomm.contacts.BaseFragment;
 import fr.rizomm.contacts.R;
+import fr.rizomm.contacts.managers.ContactManager;
 import fr.rizomm.contacts.model.Contact;
 
 
@@ -31,7 +32,7 @@ public class ContactDetailFragment extends BaseFragment {
     TextView phoneTextView;
 
     @Inject
-    List<Contact> contacts;
+    ContactManager contactManager;
 
     private Contact mContact;
 
@@ -44,7 +45,7 @@ public class ContactDetailFragment extends BaseFragment {
         super.onCreate(savedInstanceState);
 
         if (getActivity().getIntent() != null) {
-            mContact = contacts.get(getActivity().getIntent().getIntExtra(ARG_CONTACT, 0));
+            mContact = contactManager.getContacts().get(getActivity().getIntent().getIntExtra(ARG_CONTACT, 0));
         }
     }
 

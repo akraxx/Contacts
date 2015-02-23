@@ -9,6 +9,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import fr.rizomm.contacts.managers.ContactManager;
 import fr.rizomm.contacts.model.Contact;
 
 /**
@@ -16,7 +17,7 @@ import fr.rizomm.contacts.model.Contact;
  */
 public class ContactListAdaptater extends BaseAdapter {
     @Inject
-    List<Contact> contacts;
+    ContactManager contactManager;
 
     @Inject
     Context context;
@@ -27,12 +28,12 @@ public class ContactListAdaptater extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return contacts.size();
+        return contactManager.getContacts().size();
     }
 
     @Override
     public Contact getItem(int position) {
-        return contacts.get(position);
+        return contactManager.getContacts().get(position);
     }
 
     @Override
@@ -43,7 +44,7 @@ public class ContactListAdaptater extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View cellView = convertView;
-        Contact person = contacts.get(position);
+        Contact person = contactManager.getContacts().get(position);
         ContactViewHolder viewHolder;
 
         if(cellView == null) {

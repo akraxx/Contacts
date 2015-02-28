@@ -1,6 +1,7 @@
 package fr.rizomm.contacts.ui.activities;
 
 import android.os.Bundle;
+import android.view.Menu;
 
 import fr.rizomm.contacts.BaseActivity;
 import fr.rizomm.contacts.R;
@@ -18,5 +19,11 @@ public class ContactDetailActivity extends BaseActivity {
     @Override
     public int getContentView() {
         return R.layout.activity_contact_details;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_add_contact, menu);
+        return true;
     }
 }

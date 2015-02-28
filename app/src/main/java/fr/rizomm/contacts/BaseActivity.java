@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -45,11 +46,18 @@ public abstract class BaseActivity extends ActionBarActivity implements Injectab
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(drawerToggle.onOptionsItemSelected(item)) {
-            return true;
+        switch (item.getItemId()) {
+            case R.id.toolbar_menu_help:
+                Toast.makeText(this, "Aide", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.toolbar_menu_parameters:
+                Toast.makeText(this, "Paramètres", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
         }
 
-        return  super.onOptionsItemSelected(item);
+        return true;
     }
 
     @Override

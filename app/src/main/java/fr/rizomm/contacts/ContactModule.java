@@ -2,9 +2,6 @@ package fr.rizomm.contacts;
 
 import android.content.Context;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -12,11 +9,11 @@ import dagger.Provides;
 import fr.rizomm.contacts.adaptaters.ContactFragmentPagerAdapter;
 import fr.rizomm.contacts.adaptaters.ContactViewHolder;
 import fr.rizomm.contacts.managers.ContactManager;
-import fr.rizomm.contacts.model.Contact;
 import fr.rizomm.contacts.ui.activities.ContactDetailActivity;
 import fr.rizomm.contacts.ui.activities.HomeActivity;
 import fr.rizomm.contacts.ui.fragments.ContactDetailFragment;
 import fr.rizomm.contacts.ui.fragments.ContactListFragment;
+import fr.rizomm.contacts.ui.fragments.DrawerFragment;
 import fr.rizomm.contacts.ui.fragments.HelloFragment;
 import fr.rizomm.contacts.ui.fragments.HomeFragment;
 
@@ -29,6 +26,7 @@ import fr.rizomm.contacts.ui.fragments.HomeFragment;
                 ContactDetailActivity.class,
                 HelloFragment.class,
                 HomeFragment.class,
+                DrawerFragment.class,
                 ContactListFragment.class,
                 ContactDetailFragment.class,
                 ContactFragmentPagerAdapter.class,

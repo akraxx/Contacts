@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import java.util.List;
-
 import javax.inject.Inject;
 
 import butterknife.InjectView;
@@ -18,7 +16,6 @@ import fr.rizomm.contacts.ContactApplication;
 import fr.rizomm.contacts.R;
 import fr.rizomm.contacts.TitledFragment;
 import fr.rizomm.contacts.adaptaters.ContactListAdaptater;
-import fr.rizomm.contacts.model.Contact;
 import fr.rizomm.contacts.ui.activities.ContactDetailActivity;
 
 /**

@@ -14,14 +14,22 @@ public class ContactManager {
     @Getter
     private List<Contact> contacts = new ArrayList<>();
 
+    @Getter
+    private Contact me;
+
     private void buildContactList() {
-        contacts.add(Contact.builder().firstName("MARIE").lastName("Maximilien").mail("contact@mmarie.fr").phone("0605040708").build());
-        contacts.add(Contact.builder().firstName("DOE").lastName("John").mail("jd@test.fr").phone("0505050505").build());
-        contacts.add(Contact.builder().firstName("San").lastName("Goku").mail("sg@test.fr").phone("0404040404").build());
+        contacts.add(Contact.builder().firstName("Gerard").lastName("ROBERT").mail("rg@domain.eu").phone("0605040708").build());
+        contacts.add(Contact.builder().firstName("John").lastName("DOE").mail("jd@test.fr").phone("0505050505").build());
+        contacts.add(Contact.builder().firstName("San").lastName("GOKU").mail("sg@test.fr").phone("0404040404").build());
+    }
+
+    private void buildMe() {
+        me = Contact.builder().firstName("Maximilien").lastName("MARIE").mail("contact@mmarie.fr").phone("0605040708").build();
     }
 
     public ContactManager() {
         buildContactList();
+        buildMe();
     }
 
 }

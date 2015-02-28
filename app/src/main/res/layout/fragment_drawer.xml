@@ -5,37 +5,6 @@
     android:orientation="vertical"
     android:background="#FFFFFF">
 
-    <LinearLayout
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="horizontal"
-        android:background="@color/button_material_light">
-
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher"
-            />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/drawer_me_lastname"
-                android:textStyle="bold"
-                android:textSize="22sp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/drawer_me_firstname"
-                android:textSize="20sp"/>
-        </LinearLayout>
-    </LinearLayout>
-
     <ListView
         android:id="@+id/drawer_contact_list"
         android:layout_width="match_parent"

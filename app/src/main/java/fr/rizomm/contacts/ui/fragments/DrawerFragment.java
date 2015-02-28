@@ -3,7 +3,6 @@ package fr.rizomm.contacts.ui.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,12 +33,6 @@ public class DrawerFragment extends BaseFragment {
     @Inject
     ContactListAdaptater adaptater;
 
-    @InjectView(R.id.drawer_me_lastname)
-    TextView meLastNameTextView;
-
-    @InjectView(R.id.drawer_me_firstname)
-    TextView meFirstNameTextView;
-
     @InjectView(R.id.drawer_contact_list)
     ListView contactListView;
 
@@ -48,10 +41,13 @@ public class DrawerFragment extends BaseFragment {
 
 
     @Override
-    public View onViewInflated(View view, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        meLastNameTextView.setText(contactManager.getMe().getLastName());
-        meFirstNameTextView.setText(contactManager.getMe().getFirstName());
+    public View onViewInflated(View view, LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+        View header = inflater.inflate(R.layout.profile_header, null);
+        ((TextView)header.findViewById(R.id.drawer_me_lastname)).setText(contactManager.getMe().getLastName());
+        ((TextView)header.findViewById(R.id.drawer_me_firstname)).setText(contactManager.getMe().getFirstName());
+
+        contactListView.addHeaderView(header, null, false);
         contactListView.setAdapter(adaptater);
         return view;
     }

@@ -3,6 +3,7 @@ package fr.rizomm.contacts.ui.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -38,7 +39,7 @@ public class ContactListFragment extends TitledFragment implements ContactListen
     }
 
     @Override
-    public View onViewInflated(View view, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onViewInflated(View view, LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         contactListView.setAdapter(adaptater);
 
         return view;

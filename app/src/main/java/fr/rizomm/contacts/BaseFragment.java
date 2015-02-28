@@ -31,10 +31,11 @@ public abstract class BaseFragment extends Fragment implements InjectableResourc
         final View view = inflater.inflate(getContentView(), container, false);
         ButterKnife.inject(this, view);
 
-        return onViewInflated(view, container, savedInstanceState);
+        return onViewInflated(view, inflater, container, savedInstanceState);
     }
 
     public abstract View onViewInflated(View view,
+                                        LayoutInflater inflater,
                                         @Nullable ViewGroup container,
                                         @Nullable Bundle savedInstanceState);
 

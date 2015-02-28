@@ -32,4 +32,8 @@ public class ContactManager {
         buildMe();
     }
 
+    public void addContact(Contact contact) {
+        contacts.add(contact);
+    }
+
 }

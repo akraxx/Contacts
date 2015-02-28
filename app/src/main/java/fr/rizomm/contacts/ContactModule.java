@@ -9,6 +9,7 @@ import dagger.Provides;
 import fr.rizomm.contacts.adaptaters.ContactFragmentPagerAdapter;
 import fr.rizomm.contacts.adaptaters.ContactViewHolder;
 import fr.rizomm.contacts.managers.ContactManager;
+import fr.rizomm.contacts.ui.activities.AddContactActivity;
 import fr.rizomm.contacts.ui.activities.ContactDetailActivity;
 import fr.rizomm.contacts.ui.activities.HomeActivity;
 import fr.rizomm.contacts.ui.fragments.ContactDetailFragment;
@@ -24,6 +25,7 @@ import fr.rizomm.contacts.ui.fragments.HomeFragment;
         injects = {
                 HomeActivity.class,
                 ContactDetailActivity.class,
+                AddContactActivity.class,
                 HelloFragment.class,
                 HomeFragment.class,
                 DrawerFragment.class,

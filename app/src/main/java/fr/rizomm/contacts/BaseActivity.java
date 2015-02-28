@@ -1,5 +1,6 @@
 package fr.rizomm.contacts;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
@@ -13,16 +14,13 @@ import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import fr.rizomm.contacts.ui.activities.AddContactActivity;
 
 public abstract class BaseActivity extends ActionBarActivity implements InjectableResource {
 
-    @InjectView(R.id.drawer_layout)
-    DrawerLayout drawerLayout;
-
+    private static final int ADD_CONTACT_REQUEST = 0;
     @InjectView(R.id.toolbar)
     Toolbar toolbar;
-
-    private ActionBarDrawerToggle drawerToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +33,8 @@ public abstract class BaseActivity extends ActionBarActivity implements Injectab
         ButterKnife.inject(this);
 
         setSupportActionBar(toolbar);
-        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name);
-        drawerLayout.setDrawerListener(drawerToggle);
 
         onBaseActivityCreate(savedInstanceState);
-
     }
 
     protected abstract void onBaseActivityCreate(Bundle savedInstanceState);
@@ -53,6 +48,10 @@ public abstract class BaseActivity extends ActionBarActivity implements Injectab
             case R.id.toolbar_menu_parameters:
                 Toast.makeText(this, "Paramètres", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.toolbar_button_add:
+                Intent intent = new Intent(this, AddContactActivity.class);
+                startActivityForResult(intent, ADD_CONTACT_REQUEST);
+                break;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -61,24 +60,16 @@ public abstract class BaseActivity extends ActionBarActivity implements Injectab
     }
 
     @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        drawerToggle.syncState();
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        drawerToggle.onConfigurationChanged(newConfig);
-    }
-
-    @Override
-    public void onBackPressed() {
-        if(drawerLayout.isDrawerOpen(Gravity.START|Gravity.LEFT)) {
-            drawerLayout.closeDrawers();
-            return;
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == ADD_CONTACT_REQUEST && resultCode == RESULT_OK) {
+            String firstName = data.getStringExtra("firstName");
+            Toast.makeText(this, firstName + " has been added to the list", Toast.LENGTH_SHORT).show();
+            onContactAdded();
         }
-        super.onBackPressed();
+    }
+
+    public void onContactAdded() {
+
     }
 
     @Override

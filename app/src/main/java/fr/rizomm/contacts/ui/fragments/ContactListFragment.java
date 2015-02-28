@@ -16,12 +16,13 @@ import fr.rizomm.contacts.ContactApplication;
 import fr.rizomm.contacts.R;
 import fr.rizomm.contacts.TitledFragment;
 import fr.rizomm.contacts.adaptaters.ContactListAdaptater;
+import fr.rizomm.contacts.listeners.ContactListener;
 import fr.rizomm.contacts.ui.activities.ContactDetailActivity;
 
 /**
  * Created by Maximilien on 22/02/2015.
  */
-public class ContactListFragment extends TitledFragment {
+public class ContactListFragment extends TitledFragment implements ContactListener {
 
     @Inject
     ContactListAdaptater adaptater;
@@ -58,5 +59,10 @@ public class ContactListFragment extends TitledFragment {
     @Override
     public String getTitle() {
         return "Contacts";
+    }
+
+    @Override
+    public void onContactAdded() {
+        adaptater.notifyDataSetChanged();
     }
 }

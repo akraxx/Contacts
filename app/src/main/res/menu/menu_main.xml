@@ -13,5 +13,5 @@
         android:id="@+id/toolbar_button_add"
         android:icon="@android:drawable/ic_input_add"
         android:title="Add a new item"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
 </menu>

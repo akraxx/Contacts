@@ -12,7 +12,6 @@ import fr.rizomm.contacts.managers.ContactManager;
 import fr.rizomm.contacts.ui.activities.AddContactActivity;
 import fr.rizomm.contacts.ui.activities.ContactDetailActivity;
 import fr.rizomm.contacts.ui.activities.HomeActivity;
-import fr.rizomm.contacts.ui.fragments.ContactDetailFragment;
 import fr.rizomm.contacts.ui.fragments.ContactListFragment;
 import fr.rizomm.contacts.ui.fragments.DrawerFragment;
 import fr.rizomm.contacts.ui.fragments.HelloFragment;
@@ -30,7 +29,6 @@ import fr.rizomm.contacts.ui.fragments.HomeFragment;
                 HomeFragment.class,
                 DrawerFragment.class,
                 ContactListFragment.class,
-                ContactDetailFragment.class,
                 ContactFragmentPagerAdapter.class,
                 ContactViewHolder.class
         }

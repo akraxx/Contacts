@@ -48,7 +48,7 @@ public class ContactListFragment extends TitledFragment implements ContactListen
     @OnItemClick(R.id.listView)
     public void onContactListItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent nextScreen = new Intent(getActivity(), ContactDetailActivity.class);
-        nextScreen.putExtra(ContactDetailFragment.ARG_CONTACT, position);
+        nextScreen.putExtra(ContactDetailActivity.ARG_CONTACT, position);
         startActivity(nextScreen);
     }
 

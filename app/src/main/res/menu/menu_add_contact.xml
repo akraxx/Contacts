@@ -10,7 +10,7 @@
         android:title="@string/toolbar_menu_parameters" />
 
     <item
-        android:id="@+id/toolbar_button_add"
+        android:id="@+id/toolbar_button_validate"
         android:icon="@drawable/ic_check"
         android:title="Validate"
         app:showAsAction="always" />

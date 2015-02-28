@@ -3,6 +3,7 @@ package fr.rizomm.contacts;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -42,6 +43,9 @@ public abstract class BaseActivity extends ActionBarActivity implements Injectab
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
             case R.id.toolbar_menu_help:
                 Toast.makeText(this, "Aide", Toast.LENGTH_SHORT).show();
                 break;

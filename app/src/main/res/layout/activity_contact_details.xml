@@ -5,11 +5,106 @@
 
     <include layout="@layout/toolbar" />
 
-    <fragment
-        android:id="@+id/contact_details"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:name="fr.rizomm.contacts.ui.fragments.ContactDetailFragment"
-        android:orientation="horizontal" />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_weight="10">
+
+        <ImageView
+            android:src="@drawable/ic_profile"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:textSize="22sp"
+                android:gravity="right"
+                android:text="Prénom"
+                android:id="@+id/firstname_textview_label" />
+
+            <TextView
+                android:paddingLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:id="@+id/firstname_textview_details" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:textSize="22sp"
+                android:gravity="right"
+                android:text="Nom"
+                android:id="@+id/lastname_textview_label" />
+
+            <TextView
+                android:paddingLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:id="@+id/lastname_textview_details" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:textSize="22sp"
+                android:src="@drawable/ic_phone" />
+
+            <TextView
+                android:paddingLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:id="@+id/phone_textview_details" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:textSize="22sp"
+                android:src="@drawable/ic_mail" />
+
+            <TextView
+                android:paddingLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:id="@+id/mail_textview_details" />
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

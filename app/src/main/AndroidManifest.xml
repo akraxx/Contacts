@@ -18,8 +18,16 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.activities.ContactDetailActivity" />
-        <activity android:name=".ui.activities.AddContactActivity" />
+        <activity android:name=".ui.activities.ContactDetailActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activities.HomeActivity" />
+        </activity>
+        <activity android:name=".ui.activities.AddContactActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activities.HomeActivity" />
+        </activity>
     </application>
 
 </manifest>

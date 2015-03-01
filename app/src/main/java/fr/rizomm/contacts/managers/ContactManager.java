@@ -11,7 +11,6 @@ import lombok.Getter;
  */
 public class ContactManager {
 
-    @Getter
     private List<Contact> contacts = new ArrayList<>();
 
     @Getter
@@ -34,6 +33,10 @@ public class ContactManager {
 
     public void addContact(Contact contact) {
         contacts.add(contact);
+    }
+
+    public List<Contact> getContacts() {
+        return new ArrayList<>(contacts);
     }
 
 }

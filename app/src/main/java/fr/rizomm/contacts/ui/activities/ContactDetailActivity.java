@@ -1,11 +1,14 @@
 package fr.rizomm.contacts.ui.activities;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import javax.inject.Inject;
 
 import butterknife.InjectView;
+import butterknife.OnClick;
 import fr.rizomm.contacts.BaseActivity;
 import fr.rizomm.contacts.R;
 import fr.rizomm.contacts.managers.ContactManager;
@@ -26,6 +29,9 @@ public class ContactDetailActivity extends BaseActivity {
     @InjectView(R.id.details_phone_textview)
     TextView phoneTextView;
 
+    @InjectView(R.id.details_add_contact_button)
+    Button addContactButton;
+
     @Inject
     ContactManager contactManager;
 
@@ -37,7 +43,7 @@ public class ContactDetailActivity extends BaseActivity {
         Contact mContact = null;
 
         if (getIntent() != null) {
-            mContact = contactManager.getContacts().get(getIntent().getIntExtra(ARG_CONTACT, 0)-1);
+            mContact = contactManager.getContacts().get(getIntent().getIntExtra(ARG_CONTACT, 0));
         }
 
         if(mContact != null) {
@@ -52,4 +58,11 @@ public class ContactDetailActivity extends BaseActivity {
     public int getContentView() {
         return R.layout.activity_contact_details;
     }
+
+    @OnClick(R.id.details_add_contact_button)
+    public void onAddContactButtonClick(View v) {
+        addNewContactIntent();
+    }
+
+
 }

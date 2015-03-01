@@ -44,7 +44,7 @@ public abstract class BaseActivity extends ActionBarActivity implements Injectab
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
+                finish();
                 return true;
             case R.id.toolbar_menu_help:
                 Toast.makeText(this, "Aide", Toast.LENGTH_SHORT).show();
@@ -53,14 +53,18 @@ public abstract class BaseActivity extends ActionBarActivity implements Injectab
                 Toast.makeText(this, "Paramètres", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.toolbar_button_add:
-                Intent intent = new Intent(this, AddContactActivity.class);
-                startActivityForResult(intent, ADD_CONTACT_REQUEST);
+                addNewContactIntent();
                 break;
             default:
                 return super.onOptionsItemSelected(item);
         }
 
         return true;
+    }
+
+    public void addNewContactIntent() {
+        Intent intent = new Intent(this, AddContactActivity.class);
+        startActivityForResult(intent, ADD_CONTACT_REQUEST);
     }
 
     @Override

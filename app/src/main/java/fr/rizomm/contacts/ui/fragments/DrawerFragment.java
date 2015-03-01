@@ -55,7 +55,8 @@ public class DrawerFragment extends BaseFragment {
     @OnItemClick(R.id.drawer_contact_list)
     public void onContactListItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent nextScreen = new Intent(getActivity(), ContactDetailActivity.class);
-        nextScreen.putExtra(ContactDetailActivity.ARG_CONTACT, position);
+        // Position -1 because we added an header
+        nextScreen.putExtra(ContactDetailActivity.ARG_CONTACT, position - 1);
         startActivity(nextScreen);
     }
 

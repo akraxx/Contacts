@@ -1,8 +1,5 @@
 package fr.rizomm.contacts.model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.experimental.Builder;

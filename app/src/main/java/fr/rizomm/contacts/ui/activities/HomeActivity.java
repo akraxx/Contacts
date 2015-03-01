@@ -1,10 +1,7 @@
 package fr.rizomm.contacts.ui.activities;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 
-import fr.rizomm.contacts.BaseActivity;
 import fr.rizomm.contacts.DrawerActivity;
 import fr.rizomm.contacts.R;
 import fr.rizomm.contacts.ui.fragments.HomeFragment;

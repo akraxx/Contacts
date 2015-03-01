@@ -28,7 +28,7 @@ public class ContactListFragment extends TitledFragment implements ContactListen
     @Inject
     ContactListAdaptater adaptater;
 
-    @InjectView(R.id.listView)
+    @InjectView(R.id.contact_list)
     ListView contactListView;
 
     @Override
@@ -45,7 +45,7 @@ public class ContactListFragment extends TitledFragment implements ContactListen
         return view;
     }
 
-    @OnItemClick(R.id.listView)
+    @OnItemClick(R.id.contact_list)
     public void onContactListItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent nextScreen = new Intent(getActivity(), ContactDetailActivity.class);
         nextScreen.putExtra(ContactDetailActivity.ARG_CONTACT, position);

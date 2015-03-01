@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Contacts</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_example">Example action</string>
-    <string name="action_settings">Settings</string>
+
     <string name="toolbar_menu_parameters">Paramètres</string>
     <string name="toolbar_menu_help">Aide</string>
+    <string name="toolbar_menu_validate_label">Validate</string>
+    <string name="toolbar_menu_add_label">Add a new item</string>
 
+    <string name="common_phone_label">Téléphone</string>
+    <string name="common_firstname_label">Prénom</string>
+    <string name="common_lastname_label">Nom</string>
+    <string name="common_email_label">E-mail</string>
+
+    <string name="add_contact_save_label">Sauvegarder</string>
+
+    <string name="contact_details_add_contact_label">Ajouter un contact</string>
+
+    <string name="hello_label">Hello fragment !</string>
+
+    <string name="profile_mine">Mon profil</string>
 </resources>

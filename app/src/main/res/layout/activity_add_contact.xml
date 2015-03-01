@@ -20,7 +20,7 @@
 
             <EditText
                 android:id="@+id/add_contact_lastname_input"
-                android:hint="Nom"
+                android:hint="@string/common_lastname_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -33,7 +33,7 @@
 
             <EditText
                 android:id="@+id/add_contact_firstname_input"
-                android:hint="Prénom"
+                android:hint="@string/common_firstname_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -48,13 +48,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_phone"
-                android:contentDescription="Mobile Phone" />
+                android:contentDescription="@string/common_phone_label" />
 
             <EditText
                 android:id="@+id/add_contact_phone_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Téléphone"
+                android:hint="@string/common_phone_label"
                 android:layout_marginLeft="10dp"
                 android:inputType="phone"/>
         </LinearLayout>
@@ -69,13 +69,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_mail"
-                android:contentDescription="Mail" />
+                android:contentDescription="@string/common_email_label" />
 
             <EditText
                 android:id="@+id/add_contact_email_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="E-mail"
+                android:hint="@string/common_email_label"
                 android:layout_marginLeft="10dp"
                 android:inputType="textEmailAddress"/>
         </LinearLayout>
@@ -90,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="25dp"
-                android:text="Sauvegarder" />
+                android:text="@string/add_contact_save_label" />
         </LinearLayout>
 
     </LinearLayout>

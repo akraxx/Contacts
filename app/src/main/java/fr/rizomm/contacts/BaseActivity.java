@@ -10,9 +10,10 @@ import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import fr.rizomm.contacts.listeners.ContactListener;
 import fr.rizomm.contacts.ui.activities.AddContactActivity;
 
-public abstract class BaseActivity extends ActionBarActivity implements InjectableResource {
+public abstract class BaseActivity extends ActionBarActivity implements ContactListener, InjectableResource {
 
     private static final int ADD_CONTACT_REQUEST = 0;
     @InjectView(R.id.toolbar)
@@ -71,6 +72,7 @@ public abstract class BaseActivity extends ActionBarActivity implements Injectab
         }
     }
 
+    @Override
     public void onContactAdded() {
 
     }

@@ -5,7 +5,7 @@
 
     <include layout="@layout/toolbar" />
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -29,8 +29,7 @@
                 android:layout_height="match_parent"
                 android:textSize="22sp"
                 android:gravity="right"
-                android:text="Prénom"
-                android:id="@+id/firstname_textview_label" />
+                android:text="Prénom" />
 
             <TextView
                 android:paddingLeft="20dp"
@@ -38,7 +37,7 @@
                 android:layout_height="match_parent"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:id="@+id/firstname_textview_details" />
+                android:id="@+id/details_firstname_textview" />
         </LinearLayout>
 
         <LinearLayout
@@ -52,8 +51,7 @@
                 android:layout_height="match_parent"
                 android:textSize="22sp"
                 android:gravity="right"
-                android:text="Nom"
-                android:id="@+id/lastname_textview_label" />
+                android:text="Nom" />
 
             <TextView
                 android:paddingLeft="20dp"
@@ -61,7 +59,7 @@
                 android:layout_height="match_parent"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:id="@+id/lastname_textview_details" />
+                android:id="@+id/details_lastname_textview" />
         </LinearLayout>
 
         <LinearLayout
@@ -82,7 +80,7 @@
                 android:layout_height="match_parent"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:id="@+id/phone_textview_details" />
+                android:id="@+id/details_phone_textview" />
         </LinearLayout>
 
         <LinearLayout
@@ -103,8 +101,16 @@
                 android:layout_height="match_parent"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:id="@+id/mail_textview_details" />
+                android:id="@+id/details_mail_textview" />
         </LinearLayout>
+
+        <Button
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/details_add_new_contact"
+            android:text="Ajouter un contact"
+            />
     </LinearLayout>
 
 </LinearLayout>

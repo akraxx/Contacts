@@ -1,7 +1,6 @@
 package fr.rizomm.contacts.ui.activities;
 
 import android.os.Bundle;
-import android.view.Menu;
 import android.widget.TextView;
 
 import javax.inject.Inject;
@@ -18,13 +17,13 @@ import fr.rizomm.contacts.model.Contact;
 public class ContactDetailActivity extends BaseActivity {
     public static final String ARG_CONTACT = "ARG_CONTACT";
 
-    @InjectView(R.id.firstname_textview_details)
+    @InjectView(R.id.details_firstname_textview)
     TextView firstNameTextView;
-    @InjectView(R.id.lastname_textview_details)
+    @InjectView(R.id.details_lastname_textview)
     TextView lastameTextView;
-    @InjectView(R.id.mail_textview_details)
+    @InjectView(R.id.details_mail_textview)
     TextView mailTextView;
-    @InjectView(R.id.phone_textview_details)
+    @InjectView(R.id.details_phone_textview)
     TextView phoneTextView;
 
     @Inject

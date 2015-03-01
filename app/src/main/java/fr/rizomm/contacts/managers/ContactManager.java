@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.rizomm.contacts.model.Contact;
-import lombok.Getter;
 
 /**
  * Created by Maximilien on 23/02/2015.
@@ -13,7 +12,6 @@ public class ContactManager {
 
     private List<Contact> contacts = new ArrayList<>();
 
-    @Getter
     private Contact me;
 
     private void buildContactList() {
@@ -36,7 +34,16 @@ public class ContactManager {
     }
 
     public List<Contact> getContacts() {
-        return new ArrayList<>(contacts);
+        List<Contact> clonedList = new ArrayList<>(contacts.size());
+        for (Contact contact : contacts) {
+            clonedList.add(contact.clone());
+        }
+
+        return clonedList;
+    }
+
+    public Contact getMe() {
+        return me.clone();
     }
 
 }

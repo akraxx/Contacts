@@ -10,9 +10,19 @@ import lombok.experimental.Builder;
 @Data
 @AllArgsConstructor(suppressConstructorProperties = true)
 @Builder
-public class Contact {
+public class Contact implements Cloneable {
     private String lastName;
     private String firstName;
     private String phone;
     private String mail;
+
+    @Override
+    public Contact clone() {
+        return Contact.builder()
+                .firstName(firstName)
+                .lastName(lastName)
+                .phone(phone)
+                .mail(mail)
+                .build();
+    }
 }

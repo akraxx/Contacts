@@ -23,6 +23,7 @@ public class HomeActivity extends DrawerActivity {
 
     @Override
     public void onContactAdded() {
+        super.onContactAdded();
         HomeFragment homeFragment = (HomeFragment)getSupportFragmentManager().findFragmentById(R.id.contact_list);
         homeFragment.onContactAdded();
     }

@@ -17,6 +17,7 @@ import butterknife.OnItemClick;
 import fr.rizomm.contacts.BaseFragment;
 import fr.rizomm.contacts.R;
 import fr.rizomm.contacts.adaptaters.ContactListAdaptater;
+import fr.rizomm.contacts.listeners.ContactListener;
 import fr.rizomm.contacts.managers.ContactManager;
 import fr.rizomm.contacts.ui.activities.ContactDetailActivity;
 
@@ -25,7 +26,7 @@ import fr.rizomm.contacts.ui.activities.ContactDetailActivity;
  * See the <a href="https://developer.android.com/design/patterns/navigation-drawer.html#Interaction">
  * design guidelines</a> for a complete explanation of the behaviors implemented here.
  */
-public class DrawerFragment extends BaseFragment {
+public class DrawerFragment extends BaseFragment implements ContactListener {
 
     @Inject
     ContactManager contactManager;
@@ -63,5 +64,10 @@ public class DrawerFragment extends BaseFragment {
     @Override
     public int getContentView() {
         return R.layout.fragment_drawer;
+    }
+
+    @Override
+    public void onContactAdded() {
+        adaptater.notifyDataSetChanged();
     }
 }

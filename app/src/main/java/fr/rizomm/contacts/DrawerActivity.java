@@ -7,6 +7,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.Gravity;
 
 import butterknife.InjectView;
+import fr.rizomm.contacts.ui.fragments.DrawerFragment;
 
 public abstract class DrawerActivity extends BaseActivity {
 
@@ -42,5 +43,11 @@ public abstract class DrawerActivity extends BaseActivity {
             return;
         }
         super.onBackPressed();
+    }
+
+    @Override
+    public void onContactAdded() {
+        DrawerFragment drawerFragment = (DrawerFragment)getSupportFragmentManager().findFragmentById(R.id.fragment_drawer);
+        drawerFragment.onContactAdded();
     }
 }

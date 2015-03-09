@@ -1,5 +1,6 @@
 package fr.rizomm.contacts.ui.fragments;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -31,11 +32,12 @@ public class DrawerFragment extends BaseFragment implements ContactListener {
     @Inject
     ContactManager contactManager;
 
-    @Inject
     ContactListAdaptater adaptater;
 
     @InjectView(R.id.drawer_contact_list)
     ListView contactListView;
+
+    ContactListener mCallback;
 
     public DrawerFragment() {
     }
@@ -43,6 +45,7 @@ public class DrawerFragment extends BaseFragment implements ContactListener {
 
     @Override
     public View onViewInflated(View view, LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        adaptater = new ContactListAdaptater(getActivity(), contactManager);
 
         View header = inflater.inflate(R.layout.profile_header, null);
         ((TextView)header.findViewById(R.id.profile_header_lastname)).setText(contactManager.getMe().getLastName());
@@ -69,5 +72,18 @@ public class DrawerFragment extends BaseFragment implements ContactListener {
     @Override
     public void onContactAdded() {
         adaptater.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        try {
+            mCallback = (ContactListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString()
+                    + " must implement OnHeadlineSelectedListener");
+        }
+
     }
 }

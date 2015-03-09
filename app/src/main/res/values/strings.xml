@@ -19,4 +19,6 @@
     <string name="hello_label">Hello fragment !</string>
 
     <string name="profile_mine">Mon profil</string>
+    <string name="activity_title_add">Ajout</string>
+    <string name="activity_title_contact_details">Details</string>
 </resources>

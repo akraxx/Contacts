@@ -18,6 +18,7 @@ import fr.rizomm.contacts.R;
 import fr.rizomm.contacts.TitledFragment;
 import fr.rizomm.contacts.adaptaters.ContactListAdaptater;
 import fr.rizomm.contacts.listeners.ContactListener;
+import fr.rizomm.contacts.managers.ContactManager;
 import fr.rizomm.contacts.ui.activities.ContactDetailActivity;
 
 /**
@@ -25,8 +26,10 @@ import fr.rizomm.contacts.ui.activities.ContactDetailActivity;
  */
 public class ContactListFragment extends TitledFragment implements ContactListener {
 
-    @Inject
     ContactListAdaptater adaptater;
+
+    @Inject
+    ContactManager contactManager;
 
     @InjectView(R.id.contact_list)
     ListView contactListView;
@@ -40,6 +43,8 @@ public class ContactListFragment extends TitledFragment implements ContactListen
 
     @Override
     public View onViewInflated(View view, LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        adaptater = new ContactListAdaptater(this.getActivity(), contactManager);
+
         contactListView.setAdapter(adaptater);
 
         return view;

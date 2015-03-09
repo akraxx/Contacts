@@ -37,7 +37,7 @@ public class ContactDetailActivity extends BaseActivity {
 
     @Override
     protected void onBaseActivityCreate(Bundle savedInstanceState) {
-        getSupportActionBar().setTitle("Details");
+        getSupportActionBar().setTitle(getString(R.string.activity_title_contact_details));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Contact mContact = null;

@@ -14,14 +14,14 @@ import fr.rizomm.contacts.model.Contact;
  * Created by Maximilien on 22/02/2015.
  */
 public class ContactListAdaptater extends BaseAdapter {
-    @Inject
-    ContactManager contactManager;
 
-    @Inject
-    Context context;
+    private final ContactManager contactManager;
 
-    public ContactListAdaptater() {
+    private final Context context;
 
+    public ContactListAdaptater(Context context, ContactManager contactManager) {
+        this.context = context;
+        this.contactManager = contactManager;
     }
 
     @Override

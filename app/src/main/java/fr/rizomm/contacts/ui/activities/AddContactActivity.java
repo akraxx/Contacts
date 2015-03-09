@@ -40,7 +40,7 @@ public class AddContactActivity extends BaseActivity {
 
     @Override
     protected void onBaseActivityCreate(Bundle savedInstanceState) {
-        getSupportActionBar().setTitle("Ajout");
+        getSupportActionBar().setTitle(getString(R.string.activity_title_add));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 

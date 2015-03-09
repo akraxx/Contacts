@@ -45,8 +45,8 @@ public class DrawerFragment extends BaseFragment implements ContactListener {
     public View onViewInflated(View view, LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View header = inflater.inflate(R.layout.profile_header, null);
-        ((TextView)header.findViewById(R.id.drawer_me_lastname)).setText(contactManager.getMe().getLastName());
-        ((TextView)header.findViewById(R.id.drawer_me_firstname)).setText(contactManager.getMe().getFirstName());
+        ((TextView)header.findViewById(R.id.profile_header_lastname)).setText(contactManager.getMe().getLastName());
+        ((TextView)header.findViewById(R.id.profile_header_firstname)).setText(contactManager.getMe().getFirstName());
 
         contactListView.addHeaderView(header, null, false);
         contactListView.setAdapter(adaptater);

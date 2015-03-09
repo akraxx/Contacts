@@ -15,7 +15,6 @@ import fr.rizomm.contacts.model.Contact;
 
 public class ContactViewHolder {
 
-    @Inject
     Context context;
 
     private View personView;

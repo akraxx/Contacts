@@ -21,7 +21,7 @@ public class ContactApplication extends Application {
 
     protected List<Object> getModules() {
         return Arrays.<Object>asList(
-                new ContactModule(this)
+                new ContactModule()
         );
     }
 

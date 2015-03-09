@@ -34,20 +34,6 @@ import fr.rizomm.contacts.ui.fragments.HomeFragment;
         }
 )
 public class ContactModule {
-    private ContactApplication application;
-
-    public ContactModule(ContactApplication application) {
-        this.application = application;
-    }
-
-
-    /**
-     * Allow the application context to be injected but require that it be annotated with
-     */
-    @Provides @Singleton
-    Context provideApplicationContext() {
-        return application;
-    }
 
     @Singleton
     @Provides
